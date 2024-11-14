@@ -22,3 +22,11 @@ jobs:
                     echo "Hello World War 3"
             -   name: "Say goodbye"
                 run: echo "Goodbye World War"
+
+    hello3:
+        needs: [ "hello", "hello2" ]
+        name: "Hello World Peace"
+        runs-on: "ubuntu-latest"
+        steps:
+            -   name: "Say hello again"
+                run: echo "Hello World Peace"
