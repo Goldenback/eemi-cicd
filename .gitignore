@@ -1,3 +1,7 @@
+# Misc
+.DS_Store
+.idea
+
 # symfony/framework-bundle
 # |>
 /.env.local
