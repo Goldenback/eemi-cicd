@@ -33,8 +33,3 @@ jobs:
         steps:
             -   name: "Say hello 3"
                 run: echo "Hello World 3"
-
-    notif:
-        if: ""
-        steps:
-            -

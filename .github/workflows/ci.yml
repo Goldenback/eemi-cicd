@@ -11,3 +11,8 @@ jobs:
         runs-on: "ubuntu-latest"
         steps:
             -   uses: actions/checkout@v2
+            -   name: "Install php and composer dependencies"
+                run: |
+                    sudo apt-get update
+                    sudo apt-get install -y php-cli php-xml composer
+                    composer install
