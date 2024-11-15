@@ -6,27 +6,29 @@ on:
 
 jobs:
     hello:
-        name: "Hello World War"
+        name: "Hello World"
         runs-on: "ubuntu-latest"
         steps:
             -   name: "Say hello"
-                run: echo "Hello World War"
+                run: echo "Hello World"
 
     hello2:
-        name: "Hello World War 2"
+        name: "Hello World 2"
         runs-on: "ubuntu-latest"
+        continue-on-error: true
         steps:
             -   name: "Say hello again"
                 run: |
-                    echo "Hello World War 2"
-                    echo "Hello World War 3"
-            -   name: "Say goodbye"
-                run: echo "Goodbye World War"
+                    echo "Hello World"
+                    echo "Hello World"
+                    exit 1
+            -   name: "Say coucou"
+                run: echo "Coucou"
 
     hello3:
         needs: [ "hello", "hello2" ]
-        name: "Hello World Peace"
+        name: "Hello World 3"
         runs-on: "ubuntu-latest"
         steps:
-            -   name: "Say hello again"
-                run: echo "Hello World Peace"
+            -   name: "Say hello 3"
+                run: echo "Hello World 3"
