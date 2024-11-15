@@ -11,8 +11,10 @@ jobs:
         runs-on: "ubuntu-latest"
         steps:
             -   uses: actions/checkout@v2
-            -   name: "Install php and composer dependencies"
-                run: |
-                    sudo apt-get update
-                    sudo apt-get install -y php-cli php-xml composer
-                    composer install
+            -   name: "Setup PHP with tools"
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: "8.1"
+                    tools: "composer"
+            -   name: "Install PHP Deps"
+                run: composer install --prefer-dist
