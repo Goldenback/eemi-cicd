@@ -52,3 +52,5 @@ jobs:
           DATABASE_HOST: 127.0.0.1
           DATABASE_PASSWORD: password
           DATABASE_NAME: app
+      - name: "Run static analysis"
+        run: phpstan analyse src --level=10
