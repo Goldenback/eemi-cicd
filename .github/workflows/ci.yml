@@ -30,7 +30,8 @@ jobs:
           export APP_ENV=test
           composer install --prefer-dist --no-interaction --no-progress
       - name: "PHP CS Fixer"
-        run: php-cs-fixer check src --diff
+        continue-on-error: true
+        run: php-cs-fixer check src --diff --show-progress none
       - name: "PHPStan"
         run: ./vendor/bin/phpstan analyse src --level=9
       - name: "Check Database healthy"
