@@ -54,4 +54,4 @@ jobs:
           DATABASE_PASSWORD: password
           DATABASE_NAME: app
       - name: "Run static analysis"
-        run: php bin/phpstan analyse src --level=10
+        run: phpstan analyse src --level=10
