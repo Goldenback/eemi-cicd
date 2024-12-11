@@ -37,11 +37,11 @@ jobs:
           APP_ENV: test
           DATABASE_HOST: 127.0.0.1
           DATABASE_PASSWORD: password
-          DATABASE_NAME: app_test
+          DATABASE_NAME: app
       - name: "Run tests"
         run: php bin/phpunit
         env:
           APP_ENV: test
           DATABASE_HOST: 127.0.0.1
           DATABASE_PASSWORD: password
-          DATABASE_NAME: app_test
+          DATABASE_NAME: app
