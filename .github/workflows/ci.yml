@@ -14,7 +14,7 @@ jobs:
         image: mysql
         env:
           MYSQL_ROOT_PASSWORD: password
-          MYSQL_DATABASE: app
+          MYSQL_DATABASE: app_test
           MYSQL_ROOT_HOST: "%"
         ports:
           - 3306:3306
@@ -34,12 +34,14 @@ jobs:
       - name: "Start migrations"
         run: php bin/console d:m:m
         env:
+          APP_ENV: test
           DATABASE_HOST: 127.0.0.1
           DATABASE_PASSWORD: password
-          DATABASE_NAME: app
+          DATABASE_NAME: app_test
       - name: "Run tests"
         run: php bin/phpunit
         env:
+          APP_ENV: test
           DATABASE_HOST: 127.0.0.1
           DATABASE_PASSWORD: password
-          DATABASE_NAME: app
+          DATABASE_NAME: app_test
